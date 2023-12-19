@@ -1,4 +1,4 @@
-module github.com/walterwanderley/xk6-stomp
+module github.com/prmuthu/xk6-stomp-tls
 
 go 1.19
 
