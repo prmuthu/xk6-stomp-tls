@@ -23,6 +23,7 @@ func openWSConn(opts *Options, timeout time.Duration) (*wsConn, error) {
 		headers[k] = []string{v}
 	}
 	dialer := *websocket.DefaultDialer
+	dialer.TLSClientConfig = &tls.Config{InsecureSkipVerify: true}
 	conn, resp, err := dialer.DialContext(ctx, u.String(), headers)
 	if err != nil {
 		if err == websocket.ErrBadHandshake {
